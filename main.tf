@@ -15,5 +15,5 @@ provider "aws" {
 
 resource "aws_instance" "Priyankainfra" {
 	ami = "ami-06b09bfacae1453cb" 
-	instance_type = "t2.micro"
+	instance_type = "t2.nano"
 }
