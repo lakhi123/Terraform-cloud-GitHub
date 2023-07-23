@@ -14,23 +14,23 @@ stages:
       - bash: echo Build Second Job
 - stage: DevDeploy
   variables:
-    environment: priya
+    priyanka: priya
   dependsOn: Build
   jobs:
     - job: DevFist
       steps:
-      - bash: echo $(environment)DeployJob
+      - bash: echo $(priyanka)DeployJob
     - job: DevSeccond
       steps:
       - bash: echo Dev Second Job
 - stage: QADeploy
   variables:
-     environment: 
+     priyanka: 
   dependsOn: Build
   jobs:
     - job: QAJob
       steps:
-      - bash: echo $(environment)QADeploy
+      - bash: echo $(priyanka)QADeploy
 - stage: ProdDeploy
   dependsOn:
   - DevDeploy
@@ -38,4 +38,4 @@ stages:
   jobs:
     - job: ProductionsJob
       steps:
-      - bash: echo $(environment)ProdDeploy
+      - bash: echo $(priyanka)ProdDeploy
